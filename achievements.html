@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><head>
+<title>DHEEPAK | Achievements</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<canvas id="stars"></canvas>
+
+<nav>
+ <a href="index.html"><span>Home</span></a>
+ <a href="projects.html"><span>Projects</span></a>
+ <a href="research.html"><span>Research</span></a>
+ <a href="achievements.html"><span>Achievements</span></a>
+ <a href="contact.html"><span>Contact</span></a>
+</nav>
+
+<h1 class="page-title">Achievements</h1>
+
+<div class="content">
+
+<div class="card" onmousemove="kineticGlow(event,this)">Guinness World Record — Launching 150 pico-satellites.</div>
+<div class="card" onmousemove="kineticGlow(event,this)">INSPIRE Award Winner.</div>
+<div class="card" onmousemove="kineticGlow(event,this)">Top 10 Youth Ideathon — 2024.</div>
+<div class="card" onmousemove="kineticGlow(event,this)">Research on AI-Docking Phycocyanin — Anti-cancer study.</div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+function kineticGlow(e,el){
+ const rect=el.getBoundingClientRect();
+ const dx=e.clientX-rect.left, dy=e.clientY-rect.top;
+ const v=Math.sqrt(dx*dx+dy*dy);
+ const glow=Math.min((0.5*2*v*v)/30000,1);
+ el.style.boxShadow=`0 0 ${40*glow}px #00eaff`;
+}
+</script>
+</body></html>
