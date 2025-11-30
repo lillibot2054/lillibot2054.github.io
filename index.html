@@ -1,28 +1,125 @@
-<!DOCTYPE html><html><head>
-<title>DHEEPAK | Home</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<canvas id="stars"></canvas>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHEEPAK | Portfolio</title>
 
-<div class="loader">
- <div class="warp"></div>
- <div class="loadText">Initializing...</div>
-</div>
+    <!-- Sci-Fi Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Grotesk:wght@300;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<style>
+/* ------------- GLOBAL STYLING ------------- */
+body {
+    margin: 0;
+    background: #000;
+    color: white;
+    font-family: "Space Grotesk", sans-serif;
+    overflow-x: hidden;
+}
+canvas#space-bg {
+    position: fixed;
+    z-index: -1;
+    width:100vw;height:100vh;
+}
+
+/* ------------- NAVIGATION BAR WITH PHYSICS ------------- */
+nav {
+    text-align: center;
+    padding: 20px;
+}
+nav a {
+    margin: 15px;
+    color: cyan;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform .2s, color .2s;
+    font-family:"Orbitron";
+}
+nav a:hover {
+    color:#a855f7;
+    transform: scale(1.3);
+}
+
+/* ------------- MAIN SECTION ------------- */
+main {
+    text-align:center;
+    margin-top:18vh;
+    animation: fadeIn 2s ease;
+}
+h1 {
+    font-family:"Orbitron";
+    font-size:3.5rem;
+    letter-spacing:5px;
+}
+p {
+    width:60%;
+    margin:auto;
+    font-size:20px;
+    opacity:.8;
+}
+@keyframes fadeIn {
+    from {opacity:0;} to {opacity:1;}
+}
+
+/* ------------- LOADING (GRAVITY DISTORT) ------------- */
+#loader {
+    position: fixed;
+    inset:0;
+    background:black;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:3rem;
+    font-family:"Orbitron";
+    animation: swirl 3s infinite ease-in-out alternate;
+}
+@keyframes swirl {
+    0% {filter: blur(0px); transform: scale(1);}
+    100% {filter: blur(10px); transform: scale(1.4);}
+}
+.hidden {display:none;}
+
+</style>
+</head>
+
+<body>
+
+<div id="loader">🌌 DHEEPAK → LOADING...</div>
+
+<canvas id="space-bg"></canvas>
 
 <nav>
- <a href="index.html"><span>Home</span></a>
- <a href="projects.html"><span>Projects</span></a>
- <a href="research.html"><span>Research</span></a>
- <a href="achievements.html"><span>Achievements</span></a>
- <a href="contact.html"><span>Contact</span></a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="contact.html">Contact</a>
 </nav>
 
-<h1 class="page-title">DHEEPAK</h1>
-<div class="content" style="text-align:center;">
- <p>AI Researcher | Space Technology Developer | Young Scientist</p>
- <img id="orbitPlanet" src="assets/planet.png" width="50" style="position:absolute;">
-</div>
+<main>
+    <h1>Hi, I'm DHEEPAK 🚀</h1>
+    <p>Young innovator passionate about Artificial Intelligence, Space Exploration, Physics, Raspberry Pi, Biotechnology, and futuristic engineering. Welcome to my digital universe.</p>
+</main>
 
-<script src="script.js"></script>
-</body></html>
+<script>
+/* ---------- LOADING REMOVAL AFTER 2.5s ---------- */
+setTimeout(()=>document.getElementById("loader").classList.add("hidden"), 2500);
+
+/* ---------- PARTICLE BACKGROUND ---------- */
+particlesJS("space-bg", {
+particles: {
+    number:{value:200},opacity:{value:.6},size:{value:3},
+    move:{speed:1},color:{value:"#0ff"}
+}});
+</script>
+
+</body>
+</html>
