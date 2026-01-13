@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Set default font and background */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #1E1E2F;
+  color: #F5F5F5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: Add glowing text effect for neon highlights */
+.glow-text {
+  text-shadow: 0 0 5px #FF4C60, 0 0 10px #FF4C60, 0 0 20px #FF4C60, 0 0 40px #FF4C60;
+}
+
+/* Add hover effect for links */
+a:hover {
+  transition: all 0.3s ease-in-out;
+}
